@@ -31,9 +31,7 @@ export const Home = ({ beers = [] }: IHomeProps) => {
               <li className="bg-white border-2 border-black rounded p-4 w-96 h-52 flex">
                 <div className="flex flex-col flex-1 pr-3">
                   <h1 className="font-bold text-lg italic">{elem.name}</h1>
-                  <p className="text-sm text-ellipsis overflow-hidden textwe bg-slate-400">
-                    {elem.description}
-                  </p>
+                  <p className="text-sm line-clamp-6">{elem.description}</p>
                 </div>
                 <div className="flex flex-2 items-center justify-center">
                   <Image

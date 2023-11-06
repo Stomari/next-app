@@ -1,18 +1,62 @@
-export interface IBrewery {
-  id: string;
+export interface IBeer {
+  id: number;
   name: string;
-  brewery_type: string;
-  address_1: string;
-  address_2?: string;
-  address_3?: string;
-  city: string;
-  state_province: string;
-  postal_code: string;
-  country: string;
-  longitude?: string;
-  latitude?: string;
-  phone: string;
-  website_url: string;
-  state: string;
-  street: string;
+  tagline: string;
+  first_brewed: string;
+  description: string;
+  image_url: string;
+  abv: number;
+  ibu: number;
+  target_fg: number;
+  target_og: number;
+  ebc: number;
+  srm: number;
+  ph: number;
+  attenuation_level: number;
+  volume: {
+    value: number;
+    unit: string;
+  };
+  boil_volume: {
+    value: number;
+    unit: string;
+  };
+  method: {
+    mash_temp: {
+      temp: {
+        value: number;
+        unit: string;
+      };
+      duration: number;
+    }[];
+    fermentation: {
+      temp: {
+        value: number;
+        unit: string;
+      };
+    };
+    twist?: any;
+  };
+  ingredients: {
+    malt: {
+      name: string;
+      amount: {
+        value: 5.3;
+        unit: string;
+      };
+    }[];
+    hops: {
+      name: string;
+      amount: {
+        value: number;
+        unit: string;
+      };
+      add: string;
+      attribute: string;
+    }[];
+    yeast: string;
+  };
+  food_pairing: string[];
+  brewers_tips: string;
+  contributed_by: string;
 }

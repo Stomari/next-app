@@ -13,7 +13,6 @@ export default function Layout({
 }) {
   return (
     <div
-      className="h-screen"
       style={{
         backgroundImage: `url(${beerImg.src})`,
         backgroundSize: 200,
@@ -34,7 +33,7 @@ export default function Layout({
         )}
       </header>
 
-      <main className="pt-10">{children}</main>
+      <main className="pt-10 flex min-h-screen">{children}</main>
     </div>
   );
 }

@@ -11,12 +11,16 @@ interface IHomeProps {
 }
 
 export const Home = ({ beers = [] }: IHomeProps) => {
+  // TODO: implement pagination
   const [currentPage, setCurrentPage] = useState(1);
-  console.log(beers);
+
   return (
     <Layout home>
       <main className="p-6">
-        <h1 className="text-5xl bg-white bg-opacity-75 w-fit p-4 rounded">
+        <h1
+          data-testid="title"
+          className="text-5xl bg-white bg-opacity-75 w-fit p-4 rounded"
+        >
           Beers
         </h1>
         <ul className="mt-4 flex flex-wrap gap-6">
@@ -34,13 +38,15 @@ export const Home = ({ beers = [] }: IHomeProps) => {
                   <p className="text-sm line-clamp-6">{elem.description}</p>
                 </div>
                 <div className="flex flex-2 items-center justify-center">
-                  <Image
-                    src={elem.image_url}
-                    alt={elem.name}
-                    width={50}
-                    height={50}
-                    className="h-full object-scale-down"
-                  />
+                  {!!elem.image_url && (
+                    <Image
+                      src={elem.image_url}
+                      alt={elem.name || ""}
+                      width={50}
+                      height={50}
+                      className="h-full object-scale-down"
+                    />
+                  )}
                 </div>
               </li>
             </Link>

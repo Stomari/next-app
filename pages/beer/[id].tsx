@@ -9,6 +9,8 @@ interface IBeerProps {
 
 export const Beer = ({ beerData }: IBeerProps) => {
   const { name } = beerData[0];
+
+  // TODO: Implement better layout and add more beer information
   return (
     <Layout>
       <h1>{name}</h1>

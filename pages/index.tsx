@@ -1,10 +1,10 @@
-import { listBeers } from "@/api";
-import Layout from "@/components/layout";
-import { IBeer } from "@/types/api";
-import { GetStaticProps } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import { listBeers } from '@/api';
+import Layout from '@/components/layout';
+import { IBeer } from '@/types/api';
+import { GetStaticProps } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
 interface IHomeProps {
   beers?: IBeer[];
@@ -27,7 +27,7 @@ export const Home = ({ beers = [] }: IHomeProps) => {
           {beers.map((elem) => (
             <Link
               href={{
-                pathname: "/beer/[id]",
+                pathname: '/beer/[id]',
                 query: { id: elem.id },
               }}
               key={elem.id}
@@ -41,7 +41,7 @@ export const Home = ({ beers = [] }: IHomeProps) => {
                   {!!elem.image_url && (
                     <Image
                       src={elem.image_url}
-                      alt={elem.name || ""}
+                      alt={elem.name || ''}
                       width={50}
                       height={50}
                       className="h-full object-scale-down"

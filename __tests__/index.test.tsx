@@ -7,7 +7,7 @@ describe("Home", () => {
   it("renders title", () => {
     render(<Home />);
 
-    const title = screen.getByTestId("title");
+    const title = screen.getByTestId("titlee");
 
     expect(title).toBeInTheDocument();
   });

@@ -23,7 +23,7 @@ export const Home = ({ beers = [] }: IHomeProps) => {
         >
           Beers
         </h1>
-        <ul className="mt-4 flex flex-wrap gap-6">
+        <ul data-testid="beers-list" className="mt-4 flex flex-wrap gap-6">
           {beers.map((elem) => (
             <Link
               href={{

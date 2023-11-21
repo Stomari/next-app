@@ -1,4 +1,4 @@
-import { IBeer } from "@/types/api";
+import { IBeer } from '@/types/api';
 
 export const listBeers = async (
   perPage?: number,
@@ -6,7 +6,7 @@ export const listBeers = async (
 ): Promise<IBeer[] | undefined> => {
   try {
     const response = await fetch(
-      `https://api.punkapi.com/v2/beers?per_page=${perPage || 50}&page=${
+      `https://api.punkapi.com/v2/beers?per_page=${perPage || 25}&page=${
         page || 1
       }`,
     );
@@ -18,9 +18,7 @@ export const listBeers = async (
 
 export const getBeerData = async (id: number): Promise<IBeer[] | undefined> => {
   try {
-    const response = await fetch(
-      `https://api.punkapi.com/v2/beers/${id}`,
-    );
+    const response = await fetch(`https://api.punkapi.com/v2/beers/${id}`);
     return response.json();
   } catch (error) {
     console.warn(error);

@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import { IBeer } from '@/types/api';
-import Home from '../pages/index';
+import Home from '@/pages';
 
 describe('Home', () => {
   it('renders title', () => {

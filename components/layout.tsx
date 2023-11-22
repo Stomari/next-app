@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
-import Head from "next/head";
-import Link from "next/link";
+import { ReactNode } from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
 
-import beerImg from "@/public/beer.png";
+import beerImg from '@/public/beer.png';
 
 export default function Layout({
   children,
@@ -25,9 +25,11 @@ export default function Layout({
       </Head>
 
       <header className="fixed w-full bg-gradient-to-t from-yellow-400 to-white p-2 flex justify-between items-center border-b-2 border-black">
-        <h1 className="font-bold text-lg w-fit">Beer App</h1>
+        <h1 data-testid={'header-title'} className="font-bold text-lg w-fit">
+          Beer App
+        </h1>
         {!home && (
-          <Link className="text-blue-700" href={"/"}>
+          <Link data-testid="header-back" className="text-blue-700" href={'/'}>
             🠔 Back to Home
           </Link>
         )}

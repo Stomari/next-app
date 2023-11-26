@@ -23,7 +23,7 @@ export const Beer = ({ beerData }: IBeerProps) => {
                 alt={name || ''}
                 width={100}
                 height={100}
-                className="object-scale-down"
+                className="h-64 w-auto object-scale-down"
               />
             )}
           </div>

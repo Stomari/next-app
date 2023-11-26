@@ -1,6 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { IBeer } from '@/types/api';
 import Beer from '@/pages/beer/[id]';
+import { renderWithWrapper } from '@/utils/testWrapper';
 
 const beerDataMock: IBeer[] = [
   {
@@ -21,7 +22,7 @@ const beerDataMock: IBeer[] = [
 
 describe('Beer', () => {
   it('renders card with all details', () => {
-    render(<Beer beerData={beerDataMock} />);
+    renderWithWrapper(<Beer beerData={beerDataMock} />);
 
     const name = screen.getByText(beerDataMock[0].name!);
     const description = screen.getByText(beerDataMock[0].description!);
